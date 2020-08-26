@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('throttle:10,1')->group(function () {
-    Route::prefix('v1')->name('api.v1.')->namespace('Api\v1')->group(function () {
-        Route::post('', 'SubscribersController@index');
-        Route::get('/{subscriber}', 'SubscribersController@show');
+Route::prefix('v1')
+    ->middleware('throttle:10,1')
+    ->name('api.v1.')
+    ->namespace('Api\v1')
+    ->group(function () {
+        Route::prefix('subscribers')->group(function () {
+            Route::post('', 'SubscribersController@index');
+            Route::get('/{subscriber}', 'SubscribersController@show');
+        });
     });
-});
