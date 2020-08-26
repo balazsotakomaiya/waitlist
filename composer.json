@@ -1,10 +1,11 @@
 {
-    "name": "laravel/laravel",
+    "name": "heyitsbalazs/waitlist",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "Create your own viral waiting list with a built-in referral system.",
     "keywords": [
-        "framework",
-        "laravel"
+        "startup",
+        "laravel",
+        "php"
     ],
     "license": "MIT",
     "require": {
