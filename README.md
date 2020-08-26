@@ -1,8 +1,2 @@
-# Waitlist
-
-## Position algorithm
-1. Order all emails by CREATED_AT  
-1.1 Newest email would mean the lowest position
-2. Retrieve the amount of referrals an email has made
-3. Deduct (number of emails * 10) from current position based on date
-
+# ⏰ Waitlist
+Working on a startup? A new product launch? Create your own viral waiting list, with a built-in referral system, and gamify the process of building audiences.
