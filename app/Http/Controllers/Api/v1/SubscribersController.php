@@ -25,7 +25,6 @@ class SubscribersController extends Controller
         }
 
         return response()->json([
-            'id' => $subscriber->id,
             'position' => $subscriber->getPosition(),
         ], Response::HTTP_CREATED);
     }
