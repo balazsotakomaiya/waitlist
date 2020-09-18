@@ -1,4 +1,6 @@
-<img align="center" src="resources/images/waitlist.png" alt="logo" width="300" />  
+<p align="center">
+<img src="resources/images/waitlist.png" alt="logo" width="300" />  
+</p>
 
 [![Build Status](https://travis-ci.org/heyitsbalazs/waitlist.svg?branch=master)](https://travis-ci.org/heyitsbalazs/waitlist)
 [![StyleCI](https://github.styleci.io/repos/290447940/shield?branch=master&style=flat)](https://github.styleci.io/repos/290447940?branch=master)  
