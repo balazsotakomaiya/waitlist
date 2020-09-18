@@ -19,7 +19,8 @@ Route::prefix('v1')
     ->namespace('Api\v1')
     ->group(function () {
         Route::prefix('subscribers')->group(function () {
-            Route::post('', 'SubscribersController@index');
-            Route::get('/{subscriber}', 'SubscribersController@show');
+            Route::get('', 'SubscribersController@index');
+            Route::post('', 'SubscribersController@store');
+            Route::get('/{subscriber:email}', 'SubscribersController@show');
         });
     });

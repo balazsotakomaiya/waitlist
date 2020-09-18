@@ -45,4 +45,31 @@ class SubscriberControllerTest extends TestCase
 
         $response->assertStatus(422);
     }
+
+    public function test_that_you_can_see_all_subscriber_data()
+    {
+        $response = $this->getJson('/api/v1/subscribers');
+
+        $response
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'total',
+            ]);
+    }
+
+    public function test_that_you_can_see_your_position()
+    {
+        $this->postJson('/api/v1/subscribers', [
+            'email' => $this->email,
+        ]);
+
+        $response = $this->getJson('/api/v1/subscribers/' . $this->email);
+
+        $response
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'position',
+                'total',
+            ]);
+    }
 }

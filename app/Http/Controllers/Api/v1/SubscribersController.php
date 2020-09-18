@@ -9,7 +9,14 @@ use Symfony\Component\HttpFoundation\Response;
 
 class SubscribersController extends Controller
 {
-    public function index(Request $request)
+    public function index()
+    {
+        return response()->json([
+            'total' => Subscriber::count(),
+        ]);
+    }
+
+    public function store(Request $request)
     {
         $data = $request->validate([
             'email' => 'required|email|unique:subscribers,email',
@@ -29,11 +36,11 @@ class SubscribersController extends Controller
         ], Response::HTTP_CREATED);
     }
 
-    public function show(Subscriber $subscriber) {
+    public function show(Subscriber $subscriber)
+    {
         return response()->json([
-            'id' => $subscriber->id,
             'position' => $subscriber->getPosition(),
-            'total_subscribers_count' => Subscriber::count(),
+            'total' => Subscriber::count(),
         ]);
     }
 }
